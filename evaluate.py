@@ -19,7 +19,9 @@ import tensorflow as tf
 import core.utils as utils
 from core.config import cfg
 from core.yolov3 import YOLOV3
-
+config = tf.ConfigProto()
+config.gpu_options.allow_growth = True
+sess = tf.Session(config=config)
 class YoloTest(object):
     def __init__(self):
         self.input_size       = cfg.TEST.INPUT_SIZE
