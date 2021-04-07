@@ -47,7 +47,7 @@ bboxes = utils.nms(bboxes, 0.45, method='nms')
 image = utils.draw_bbox(original_image, bboxes)
 image = Image.fromarray(image)
 image.show()
-
+image.save('test.png')
 
 
 
