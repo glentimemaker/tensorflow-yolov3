@@ -36,7 +36,7 @@ __C.YOLO.DEMO_WEIGHT            = "./checkpoint/yolov3_coco_demo.ckpt"
 # Train options
 __C.TRAIN                       = edict()
 
-__C.TRAIN.ANNOT_PATH            = "./data/dataset/voc_train_pseudo.txt"
+__C.TRAIN.ANNOT_PATH            = "./data/dataset/voc_train_pseudo_b3.txt"
 __C.TRAIN.BATCH_SIZE            = 6
 __C.TRAIN.INPUT_SIZE            = [320, 352, 384, 416, 448, 480, 512, 544, 576, 608]
 __C.TRAIN.DATA_AUG              = True
@@ -44,8 +44,8 @@ __C.TRAIN.LEARN_RATE_INIT       = 1e-4
 __C.TRAIN.LEARN_RATE_END        = 1e-6
 __C.TRAIN.WARMUP_EPOCHS         = 2
 __C.TRAIN.FISRT_STAGE_EPOCHS    = 20
-__C.TRAIN.SECOND_STAGE_EPOCHS   = 30
-__C.TRAIN.INITIAL_WEIGHT        = "./checkpoint/yolov3_test_loss=12.8621.ckpt-30"
+__C.TRAIN.SECOND_STAGE_EPOCHS   = 40
+__C.TRAIN.INITIAL_WEIGHT        = "./checkpoint/yolov3_coco_demo.ckpt"
 
 
 
@@ -65,11 +65,17 @@ __C.TEST.SCORE_THRESHOLD        = 0.3
 __C.TEST.IOU_THRESHOLD          = 0.45
 
 # PSEUDO_DATA
+# __C.PSEUDO                      = edict()
+# __C.PSEUDO.ANNO_PATH            = './data/dataset/voc_train_rest95.txt'
+# __C.PSEUDO.TEMP_DATA           = './data/dataset/voc_train_temp.txt'
+# __C.PSEUDO.TRAIN_DATA           = './data/dataset/voc_train_pseudo.txt'
+# __C.PSEUDO.THRESHOLD            = 0.5
 __C.PSEUDO                      = edict()
 __C.PSEUDO.ANNO_PATH            = './data/dataset/voc_train_rest95.txt'
-__C.PSEUDO.TEMP_DATA           = './data/dataset/voc_train_temp.txt'
-__C.PSEUDO.TRAIN_DATA           = './data/dataset/voc_train_pseudo.txt'
+__C.PSEUDO.TEMP_DATA           = './data/dataset/voc_train_temp_b3.txt'
+__C.PSEUDO.TRAIN_DATA           = './data/dataset/voc_train_pseudo_b3.txt'
 __C.PSEUDO.THRESHOLD            = 0.5
+__C.PSEUDO.CLASS_FREQ           = './data/dataset/class_freq_b3_1.json'
 
 
 
